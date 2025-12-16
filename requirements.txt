@@ -1,0 +1,44 @@
+# ====================================
+# Core AI/ML Dependencies
+# ====================================
+
+# OpenAI API client (for agent-example.ipynb, workflow-example.ipynb)
+openai>=1.0.0
+
+# Google Generative AI - Gemini (for workflow-example.ipynb)
+google-generativeai>=0.8.0
+
+# ====================================
+# AWS Dependencies
+# ====================================
+
+# AWS SDK - Boto3 for EC2 and Bedrock (for ec2-client-example.ipynb, strands-sdk-example.ipynb)
+boto3>=1.34.0
+
+# AWS Strands Agents SDK (for strands-sdk-example.ipynb)
+strands-agents>=0.1.0
+
+# ====================================
+# UI/Interface Dependencies
+# ====================================
+
+# Gradio for web interfaces (for workflow-example.ipynb)
+gradio>=5.0.0
+
+# ====================================
+# MCP (Model Context Protocol)
+# ====================================
+
+# FastMCP for MCP server (for fast-mcp.ipynb)
+fastmcp>=0.1.0
+
+# ====================================
+# Utility Dependencies
+# ====================================
+
+# Environment variable management (for all notebooks)
+python-dotenv>=1.0.0
+
+# HTTP requests (for fast-mcp.ipynb)
+requests>=2.31.0
+
