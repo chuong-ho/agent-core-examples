@@ -1,0 +1,36 @@
+default_agent: strands_agent_inbound_identity
+agents:
+  strands_agent_inbound_identity:
+    name: strands_agent_inbound_identity
+    entrypoint: /Users/chuongho/Library/CloudStorage/WorkDocsDrive-Documents/Workdocks
+      - Working Files/Lunch and Learn/lunch_and_learn_demos/20-agentcore-identity/strands_agentcore_bedrock.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::977099023120:role/AmazonBedrockAgentCoreSDKRuntime-us-west-2-2213d1079e
+      execution_role_auto_create: false
+      account: '977099023120'
+      region: us-west-2
+      ecr_repository: 977099023120.dkr.ecr.us-west-2.amazonaws.com/bedrock-agentcore-strands_agent_inbound_identity
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: strands_agent_inbound_identity-KMsbEFE3Gy
+      agent_arn: arn:aws:bedrock-agentcore:us-west-2:977099023120:runtime/strands_agent_inbound_identity-KMsbEFE3Gy
+      agent_session_id: 058a2d82-af0f-4b3b-b622-3bea7ba9d93d
+    codebuild:
+      project_name: bedrock-agentcore-strands_agent_inbound_identity-builder
+      execution_role: arn:aws:iam::977099023120:role/AmazonBedrockAgentCoreSDKCodeBuild-us-west-2-2213d1079e
+      source_bucket: bedrock-agentcore-codebuild-sources-977099023120-us-west-2
+    authorizer_configuration:
+      customJWTAuthorizer:
+        discoveryUrl: https://cognito-idp.us-west-2.amazonaws.com/us-west-2_GanMWZ5p9/.well-known/openid-configuration
+        allowedClients:
+        - 565u109uk441h3749btis5vadj
+    request_header_configuration: null
+    oauth_configuration: null

@@ -1,0 +1,32 @@
+default_agent: strands_claude_getting_started
+agents:
+  strands_claude_getting_started:
+    name: strands_claude_getting_started
+    entrypoint: /Users/chuongho/Library/CloudStorage/WorkDocsDrive-Documents/Workdocks
+      - Working Files/Lunch and Learn/lunch_and_learn_demos/10-strands-agent-on-agentcore/strands_agentcore_bedrock.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::977099023120:role/AmazonBedrockAgentCoreSDKRuntime-us-west-2-8556fc4504
+      execution_role_auto_create: false
+      account: '977099023120'
+      region: us-west-2
+      ecr_repository: 977099023120.dkr.ecr.us-west-2.amazonaws.com/bedrock-agentcore-strands_claude_getting_started
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: strands_claude_getting_started-aVx1I38Otw
+      agent_arn: arn:aws:bedrock-agentcore:us-west-2:977099023120:runtime/strands_claude_getting_started-aVx1I38Otw
+      agent_session_id: ccd179e3-53c8-4a5f-ad77-ae26096bfeb4
+    codebuild:
+      project_name: bedrock-agentcore-strands_claude_getting_started-builder
+      execution_role: arn:aws:iam::977099023120:role/AmazonBedrockAgentCoreSDKCodeBuild-us-west-2-8556fc4504
+      source_bucket: bedrock-agentcore-codebuild-sources-977099023120-us-west-2
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
